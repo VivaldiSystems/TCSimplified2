@@ -26,6 +26,7 @@ namespace RibbonWin
         private string connectionString = "Data Source=104.181.51.61;Initial Catalog=TCSimplified;Persist Security Info=True;User ID=ils;Password=foll2164";
         private SqlConnection connection;
 
+
         public ObservableCollection<DataTable> dataCollection;
         public DataTable dt;
 
