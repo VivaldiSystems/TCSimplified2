@@ -1,0 +1,48 @@
+﻿<Window x:Class="TCSimplified2.Windows.AdminPIN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCSimplified2.Windows"
+        mc:Ignorable="d"
+        Title="Admin PIN" Height="450" Width="350" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True"
+        ResizeMode="NoResize" WindowState="Normal" FontFamily="Poppins" WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="10" Background="White">
+        <Grid>
+            <Border Background="Transparent" Grid.Row="0" Panel.ZIndex="1" VerticalAlignment="Top" Height="60" Grid.ColumnSpan="2" MouseLeftButtonDown="Border_MouseLeftButtonDown" />
+            <Button x:Name="btnClose" Panel.ZIndex="3" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0"/>
+            <TextBlock Name="Title" Text="Admin PIN Required" Panel.ZIndex="0" Width="200" Foreground="{DynamicResource SecondaryBlueColor}" FontSize="12" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0" />
+            <TextBlock Name="admin_warning" Text="admin_warning" Foreground="Red" FontStyle="Italic" Margin="5 30 0 0"/>
+            <StackPanel Height="30" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 60 0 0">
+                <TextBox Name="tbPIN" FontSize="25" BorderThickness="0" Width="150" Height="30" TextChanged="tbPIN_TextChanged"  VerticalAlignment="Top" Margin="0 0 10 0"/>
+                <Button Name="enter" Content="Enter" IsDefault="True" FontSize="14" Style="{DynamicResource ProButtonStyle}" Background="{DynamicResource PrimaryGreenColor}" Padding="0 0" Height="30" Width="70" Click="enter_Click" />
+            </StackPanel>
+            <Grid Margin="0 100 0 0" Width="250" Height="350" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Name="one" Content="1" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="0" Grid.Column="1" Name="two" Content="2" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="0" Grid.Column="2" Name="three" Content="3" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="1" Grid.Column="0" Name="four" Content="4" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="1" Grid.Column="1" Name="five" Content="5" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="1" Grid.Column="2" Name="six" Content="6" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="2" Grid.Column="0" Name="seven" Content="7" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="2" Grid.Column="1" Name="eight" Content="8" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="2" Grid.Column="2" Name="nine" Content="9" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="3" Grid.Column="1" Name="zero" Content="0" FontSize="40" Style="{DynamicResource PINButtons}" Background="{DynamicResource TertiaryBlueColor}" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+                <Button Grid.Row="3" Grid.Column="2" Name="back" Content="←" VerticalContentAlignment="Top" FontSize="64" Padding="0 0" Style="{DynamicResource PINButtons}" Background="#FFD01F1F" Height="80" Width="70" Margin="0 0 0 0" Click="Num_Click" />
+            </Grid>
+            
+        </Grid>
+    </Border>
+</Window>

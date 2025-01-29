@@ -1,0 +1,62 @@
+﻿<Window x:Class="TCSimplified2.Windows.CreateShift"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCSimplified2.Windows"
+        mc:Ignorable="d"
+        Title="Create Shift" Height="200" Width="500" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True"
+        ResizeMode="NoResize" WindowState="Normal" FontFamily="Poppins" WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="10" Background="{DynamicResource SecondaryBackgroundColor}">
+        <Grid>
+            <Border Background="Transparent" Grid.Row="0" Panel.ZIndex="1" VerticalAlignment="Top" Height="60" Grid.ColumnSpan="2" MouseLeftButtonDown="Border_MouseLeftButtonDown" />
+            <Button x:Name="btnClose" Panel.ZIndex="3" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0"/>
+            <TextBlock Name="Title" Text="Create Shift" Panel.ZIndex="0" Width="200" Foreground="{DynamicResource SecondaryBlueColor}" FontSize="12" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 0" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- <TextBlock Name="MainText" Text="Create Shift:" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Margin="0 0 8 0"/> -->
+                <StackPanel VerticalAlignment="Top" Margin="0 23 5 0">
+                    <TextBlock Text="IN:" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 18"/>
+                    <TextBlock Text="OUT:" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Name="ContentSP"  Margin="0 0 0 0" Height="75" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Name="Date" Text="Date" FontSize="15" VerticalAlignment="Center" FontWeight="Bold" Margin="0 0 0 0"/>
+                        <DatePicker Name="InDatePick" SelectedDate="1/1/2020" SelectedDateChanged="DatePick_SelectedDateChanged" FontSize="13" Width="150" VerticalAlignment="Center" Margin="0 0 8 8"/>
+                        <DatePicker Name="OutDatePick" SelectedDate="1/1/2020" SelectedDateChanged="DatePick_SelectedDateChanged" FontSize="13" Width="150" VerticalAlignment="Center" Margin="0 0 8 0"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Name="TimeHr" Text="Time" FontSize="15" VerticalAlignment="Center" FontWeight="Bold" Margin="0 0 0 0"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+                            <TextBox Name="InTimeHrTB" FontSize="18" Width="35" TextAlignment="Right" VerticalAlignment="Center" LostFocus="TimeTBs_LostFocus" TextChanged="TimeTBs_TextChanged" Margin="0 0 2 0"/>
+                            <TextBlock Text=":" FontSize="18" VerticalAlignment="Center" Margin="0 0 2 0"/>
+                            <TextBox Name="InTimeMinTB" FontSize="18" Width="35" TextAlignment="Right" VerticalAlignment="Center" LostFocus="TimeTBs_LostFocus" TextChanged="TimeTBs_TextChanged" Margin="0 0 8 0"/>
+                            <ComboBox Name="InAMPM" SelectedValuePath="Content" FontSize="15" Width="60">
+                                <ComboBoxItem Name="InAM" Content="AM"/>
+                                <ComboBoxItem Name="InPM" Content="PM"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="OutTimeHrTB" FontSize="18" Width="35" TextAlignment="Right" VerticalAlignment="Center" LostFocus="TimeTBs_LostFocus" TextChanged="TimeTBs_TextChanged" Margin="0 0 2 0"/>
+                            <TextBlock Text=":" FontSize="18" VerticalAlignment="Center" Margin="0 0 2 0"/>
+                            <TextBox Name="OutTimeMinTB" FontSize="18" Width="35" TextAlignment="Right" VerticalAlignment="Center" LostFocus="TimeTBs_LostFocus" TextChanged="TimeTBs_TextChanged" Margin="0 0 8 0"/>
+                            <ComboBox Name="OutAMPM" SelectedValuePath="Content" FontSize="15" Width="60">
+                                <ComboBoxItem Name="OutAM" Content="AM"/>
+                                <ComboBoxItem Name="OutPM" Content="PM"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="59 0 0 23">
+                <TextBlock Text="Pay Rate: " VerticalAlignment="Center" FontWeight="Bold" Margin="0 0 0 0"/>
+                <TextBox Name="tbPayRate" VerticalAlignment="Bottom" Width="60" Height="22" FontSize="18" Margin="0 0 3 0"/>
+                <TextBlock Text="/hr" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Top" Text="* Must include both in and out punches." Foreground="Red" FontStyle="Italic" FontSize="12" Height="16" HorizontalAlignment="Left" Margin="10,30,0,0"/>
+            <Button Name="Cancel" Content="Cancel" Style="{DynamicResource ProButtonStyle}" Background="{DynamicResource PrimaryRedColor}" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 125 10" Click="Button_Click" />
+            <Button Name="Save" Content="Save" Style="{DynamicResource ProButtonStyle}" Background="{DynamicResource PrimaryGreenColor}" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 10" Click="SaveButton_Click" />
+        </Grid>
+    </Border>
+</Window>
